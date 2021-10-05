@@ -33,6 +33,7 @@ namespace LAB_2._1
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // copeiky
@@ -72,11 +73,22 @@ namespace LAB_2._1
     "Выразить стоимость в рублях и копейках, например, 3 рубля 21 копейка, 15 рублей " +
     "5 копеек, 1 рубль ровно и т. п.";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(326, 104);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(111, 29);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Очистка";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 149);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -94,6 +106,7 @@ namespace LAB_2._1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
     }
 }
 
