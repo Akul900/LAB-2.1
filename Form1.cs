@@ -29,8 +29,22 @@ namespace LAB_2._1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string txt = (this.copeiky.Text);
-            Program.Input(txt);
+            int value;
+            try // оборачиваем кусок кода склонный к падению
+            {
+                value = int.Parse(this.copeiky.Text);
+            }
+            catch (FormatException) // тип ошибки, которую перехватываем
+            {
+                MessageBox.Show("Некорректный ввод", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // прерываем обработчик клика, если ввели какую-то ерунду
+            }
+            /* if (String.IsNullOrEmpty(txt))
+             {
+                 MessageBox.Show("Некорректный ввод", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 return;
+             }*/
+            Program.Input(value);
 
         }
 
@@ -63,7 +77,7 @@ namespace LAB_2._1
                 }
                 //return "lol";
             }
-            static string Rub_2(int rub, int kop)
+            static void Rub_2(int rub, int kop)
             {
                 if (rub % 10 == 2 || rub % 10 == 3 || rub % 10 == 4 || rub >= 10 && rub <= 20 || rub == 0 || rub % 10 == 0)
                 {
@@ -71,71 +85,88 @@ namespace LAB_2._1
                     {
                         if (kop % 10 == 1 && kop != 11)
                         {
-                            return ($"{rub} рублей {kop} копейка");
+                            MessageBox.Show($"{rub} рублей {kop} копейка");
+                            // return ($"{rub} рублей {kop} копейка");
                         }
                         if (kop % 10 == 2 || kop % 10 == 3 || kop % 10 == 4 || kop == 11 || kop == 10 || kop == 0)
                         {
                             if (kop >= 10 && kop <= 20 || kop == 0)
-                                return ($"{rub} рублей {kop} копеек");
+                                MessageBox.Show($"{rub} рублей {kop} копеек");
+                            // return ($"{rub} рублей {kop} копеек");
                             else
-                                return ($"{rub} рублей {kop} копейки");
+                                MessageBox.Show($"{rub} рублей {kop} копейки");
+                            // return ($"{rub} рублей {kop} копейки");
                         }
 
                         if (kop % 10 >= 5 && kop % 10 <= 9)
                         {
-                            return  ($"{rub} рублей {kop} копеек");
+                            MessageBox.Show($"{rub} рублей {kop} копеек");
+                            // return  ($"{rub} рублей {kop} копеек");
                         }
                     }
                     else
                     {
                         if (kop % 10 == 1 && kop != 11)
                         {
-                            return ($"{rub} рубля {kop} копейка");
+                            MessageBox.Show($"{rub} рубля {kop} копейка");
+                            //return ($"{rub} рубля {kop} копейка");
                         }
                         if (kop % 10 == 2 || kop % 10 == 3 || kop % 10 == 4 || kop == 11 || kop == 10 || kop == 0 || kop % 10 == 0)
                         {
                             if (kop >= 10 && kop <= 20 || kop == 0 || kop % 10 == 0)
-                                return ($"{rub} рубля {kop} копеек");
+                                MessageBox.Show($"{rub} рубля {kop} копеек");
+                            // return ($"{rub} рубля {kop} копеек");
                             else
-                                return ($"{rub} рубля {kop} копейки");
+                                MessageBox.Show($"{rub} рубля {kop} копейки");
+                            // return ($"{rub} рубля {kop} копейки");
                         }
 
                         if (kop % 10 >= 5 && kop % 10 <= 9)
                         {
-                            return ($"{rub} рубля {kop} копеек");
+                            MessageBox.Show($"{rub} рубля {kop} копеек");
+                            //return ($"{rub} рубля {kop} копеек");
                         }
                     }
                 }
-                return "lol";
+                //return "lol";
             }
-            static string Rub_3(int rub, int kop)
+            static void Rub_3(int rub, int kop)
             {
                 if (rub % 10 >= 5 && rub % 10 <= 9)
                 {
                     if (kop % 10 == 1 && kop != 11)
                     {
-                        return ($"{rub} рублей {kop} копейка");
+                        MessageBox.Show($"{rub} рублей {kop} копейка");
+                        // return ($"{rub} рублей {kop} копейка");
                     }
                     if (kop % 10 == 2 || kop % 10 == 3 || kop % 10 == 4 || kop == 11 || kop == 10 || kop == 0 || kop % 10 == 0)
                     {
                         if (kop >= 10 && kop <= 20 || kop == 0 || kop % 10 == 0)
-                            return ($"{rub} рублей {kop} копеек");
+                            MessageBox.Show($"{rub} рублей {kop} копеек");
+                        // return ($"{rub} рублей {kop} копеек");
                         else
-                            return ($"{rub} рублей {kop} копейки");
+                            MessageBox.Show($"{rub} рублей {kop} копейки");
+                        // return ($"{rub} рублей {kop} копейки");
                     }
 
                     if (kop % 10 >= 5 && kop % 10 <= 9)
                     {
-                        return ($"{rub} рублей {kop} копеек");
+                        MessageBox.Show($"{rub} рублей {kop} копеек");
+                        //return ($"{rub} рублей {kop} копеек");
                     }
                 }
-                return "lol";
+                //return "lol";
             }
-            public static void Input (string txt)
+            public static void Input (int value)
             {
                 int rub;
                 int kop;
-                Console.Write("Введите число копеек в диапазоне 1 <= n <= 9999 : ");
+                if (value < 1 || value > 9999)
+                {
+                    MessageBox.Show("Некорректный ввод", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // прерываем обработчик клика, если ввели какую-то ерунду
+                }
+                /*Console.Write("Введите число копеек в диапазоне 1 <= n <= 9999 : ");
                 string check = txt;
                 bool proverka = int.TryParse(check, out int value);
                 while (!proverka || (value < 1 || value > 9999))
@@ -143,14 +174,14 @@ namespace LAB_2._1
                     Console.WriteLine("Ошибка ввода, введите число копеек в диапазоне 1 <= n <= 9999");
                     check = Console.ReadLine();
                     proverka = int.TryParse(check, out value);
-                }
+                }*/
 
                 rub = value / 100;
                 kop = value % 100;
 
                 Rub_1(rub, kop);
-               // Rub_2(rub, kop);
-               // Rub_3(rub, kop);
+                Rub_2(rub, kop);
+                Rub_3(rub, kop);
             }
         }
 
