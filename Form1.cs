@@ -17,15 +17,6 @@ namespace LAB_2._1
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -39,11 +30,6 @@ namespace LAB_2._1
                 MessageBox.Show("Некорректный ввод", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // прерываем обработчик клика, если ввели какую-то ерунду
             }
-            /* if (String.IsNullOrEmpty(txt))
-             {
-                 MessageBox.Show("Некорректный ввод", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 return;
-             }*/
             Program.Input(value);
 
         }
@@ -75,7 +61,6 @@ namespace LAB_2._1
                         // return $"{rub} рубль {kop} копеек";
                     }
                 }
-                //return "lol";
             }
             static void Rub_2(int rub, int kop)
             {
@@ -128,7 +113,6 @@ namespace LAB_2._1
                         }
                     }
                 }
-                //return "lol";
             }
             static void Rub_3(int rub, int kop)
             {
@@ -155,7 +139,6 @@ namespace LAB_2._1
                         //return ($"{rub} рублей {kop} копеек");
                     }
                 }
-                //return "lol";
             }
             public static void Input (int value)
             {
@@ -166,15 +149,7 @@ namespace LAB_2._1
                     MessageBox.Show("Некорректный ввод", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return; // прерываем обработчик клика, если ввели какую-то ерунду
                 }
-                /*Console.Write("Введите число копеек в диапазоне 1 <= n <= 9999 : ");
-                string check = txt;
-                bool proverka = int.TryParse(check, out int value);
-                while (!proverka || (value < 1 || value > 9999))
-                {
-                    Console.WriteLine("Ошибка ввода, введите число копеек в диапазоне 1 <= n <= 9999");
-                    check = Console.ReadLine();
-                    proverka = int.TryParse(check, out value);
-                }*/
+
 
                 rub = value / 100;
                 kop = value % 100;

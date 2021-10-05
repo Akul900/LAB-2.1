@@ -40,7 +40,6 @@ namespace LAB_2._1
             this.copeiky.Name = "copeiky";
             this.copeiky.Size = new System.Drawing.Size(125, 27);
             this.copeiky.TabIndex = 0;
-            this.copeiky.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -50,7 +49,6 @@ namespace LAB_2._1
             this.label1.Size = new System.Drawing.Size(341, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Введите число копеек в диапазоне 1 ≤ n ≤ 9999";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -58,7 +56,7 @@ namespace LAB_2._1
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 29);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "Результат";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
