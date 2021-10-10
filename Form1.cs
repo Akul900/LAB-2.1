@@ -46,7 +46,7 @@ namespace LAB_2._1
     }
     public class Logic
     {
-        static void Rub_1(int rub, int kop)
+        public static void Rub_1(int rub, int kop)
         {
             if (rub % 10 == 1 && rub != 11)
             {
@@ -72,7 +72,7 @@ namespace LAB_2._1
                 }
             }
         }
-        static void Rub_2(int rub, int kop)
+        public static void Rub_2(int rub, int kop)
         {
             if (rub % 10 == 2 || rub % 10 == 3 || rub % 10 == 4 || rub >= 10 && rub <= 20 || rub == 0 || rub % 10 == 0)
             {
@@ -124,7 +124,7 @@ namespace LAB_2._1
                 }
             }
         }
-        static void Rub_3(int rub, int kop)
+        public static void Rub_3(int rub, int kop)
         {
             if (rub % 10 >= 5 && rub % 10 <= 9)
             {
