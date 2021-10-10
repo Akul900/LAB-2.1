@@ -83,9 +83,9 @@ namespace LAB_2._1
                         MessageBox.Show($"{rub} рублей {kop} копейка");
                         // return ($"{rub} рублей {kop} копейка");
                     }
-                    if (kop % 10 == 2 || kop % 10 == 3 || kop % 10 == 4 || kop == 11 || kop == 10 || kop == 0)
+                    if (kop % 10 == 2 || kop % 10 == 3 || kop % 10 == 4 || kop == 11 || kop == 10 || kop == 0 || kop % 10 == 0)
                     {
-                        if (kop >= 10 && kop <= 20 || kop == 0)
+                        if (kop >= 10 && kop <= 20 || kop == 0 || kop % 10 == 0)
                             MessageBox.Show($"{rub} рублей {kop} копеек");
                         // return ($"{rub} рублей {kop} копеек");
                         else
