@@ -15,7 +15,7 @@ namespace LAB_2._1
         public Form1()
         {
             InitializeComponent();
-            copeiky.Text = Properties.Settings.Default.copeiky.ToString();           
+            copeiky.Text = Properties.Settings.Default.copeiky.ToString(); // хранение введённого значения          
         }
 
 
@@ -32,7 +32,7 @@ namespace LAB_2._1
                 return; // прерываем обработчик клика, если ввели какую-то ерунду
             }
             Properties.Settings.Default.copeiky = value.ToString();
-            Properties.Settings.Default.Save();
+            Properties.Settings.Default.Save(); // сохранение введённого значения 
             Logic.Input(value);
 
         }
@@ -40,7 +40,7 @@ namespace LAB_2._1
         {
             this.copeiky.Text = "";
             Properties.Settings.Default.copeiky = "";
-            Properties.Settings.Default.Save();
+            Properties.Settings.Default.Save(); // сохранение очищения
         }
 
     }
