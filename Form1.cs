@@ -19,7 +19,7 @@ namespace LAB_2._1
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ResultButton_Click(object sender, EventArgs e)
         {
             int value;
             try // оборачиваем кусок кода склонный к падению
@@ -36,7 +36,7 @@ namespace LAB_2._1
             Logic.Input(value);
 
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void ClearButton_Click(object sender, EventArgs e)
         {
             this.copeiky.Text = "";
             Properties.Settings.Default.copeiky = "";
