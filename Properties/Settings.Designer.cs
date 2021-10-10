@@ -25,10 +25,10 @@ namespace LAB_2._1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int copeiky {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string copeiky {
             get {
-                return ((int)(this["copeiky"]));
+                return ((string)(this["copeiky"]));
             }
             set {
                 this["copeiky"] = value;

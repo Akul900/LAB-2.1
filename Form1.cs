@@ -15,7 +15,7 @@ namespace LAB_2._1
         public Form1()
         {
             InitializeComponent();
-            copeiky.Text = Properties.Settings.Default.copeiky.ToString();
+            copeiky.Text = Properties.Settings.Default.copeiky.ToString();           
         }
 
 
@@ -31,7 +31,7 @@ namespace LAB_2._1
                 MessageBox.Show("Некорректный ввод", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // прерываем обработчик клика, если ввели какую-то ерунду
             }
-            Properties.Settings.Default.copeiky = value;
+            Properties.Settings.Default.copeiky = value.ToString();
             Properties.Settings.Default.Save();
             Logic.Input(value);
 
@@ -39,7 +39,10 @@ namespace LAB_2._1
         private void button2_Click(object sender, EventArgs e)
         {
             this.copeiky.Text = "";
+            Properties.Settings.Default.copeiky = "";
+            Properties.Settings.Default.Save();
         }
+
     }
     public class Logic
     {
